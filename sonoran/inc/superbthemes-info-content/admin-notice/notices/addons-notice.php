@@ -51,7 +51,7 @@ $theme_name = wp_get_theme()->name;
                 display: block;
                 width: 282px;
                 content: " ";
-                background-image: url(<?php echo esc_url(get_template_directory_uri() . '/screenshot.png'); ?>);
+                background-image: url(<?php echo esc_url(wp_get_theme()->get_screenshot()); ?>);
                 background-position: bottom left 127px;
                 position: absolute;
                 bottom: -1px;
