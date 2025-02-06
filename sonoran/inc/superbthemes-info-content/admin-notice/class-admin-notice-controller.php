@@ -66,16 +66,26 @@ class AdminNoticeController
             }
         }
 
+        $stylesheet = get_stylesheet();
+        $addons_notice = $stylesheet . '_addons_notification';
+        $addons_notice_def = $stylesheet . '_addons_notification_def';
+        $theme_notice = $stylesheet . '_theme_notification';
         $notices[] = array(
-            'unique_id' => get_stylesheet() . '_addons_notification',
+            'unique_id' => $addons_notice,
             'content' => "addons-notice.php",
-            'base' => true,
+            'remove_if_active' => 'superb-blocks/plugin.php'
+        );
+        $notices[] = array(
+            'unique_id' => $addons_notice_def,
+            'content' => "addons-notice-def.php",
+            'requires_dismiss' => $addons_notice,
+            'remove_if_active' => 'superb-blocks/plugin.php',
+            'delay' => '+3 days'
         );
         if (isset($options['theme_url'])) {
             $notices[] = array(
-                'unique_id' => get_stylesheet() . '_theme_notification',
+                'unique_id' => $theme_notice,
                 'content' => "theme-notice.php",
-                'base' => true,
                 'data' => [
                     'theme_url' => $options['theme_url']
                 ],
@@ -92,9 +102,23 @@ class AdminNoticeController
     public static function AdminNotices()
     {
         foreach (self::$notices as $notice) {
-            $notice_path = trailingslashit(get_template_directory()) . (isset($notice['base']) ? 'inc/superbthemes-info-content/admin-notice/notices/' : 'inc/superbthemes-info-assets/') . $notice['content'];
+            $notice_path = trailingslashit(get_template_directory()) . 'inc/superbthemes-info-content/admin-notice/notices/' . $notice['content'];
             if (!file_exists($notice_path)) {
                 continue;
+            }
+
+            // Remove notice if the required plugin is active
+            if (isset($notice['remove_if_active'])) {
+                if (is_plugin_active($notice['remove_if_active'])) {
+                    continue;
+                }
+            }
+
+            // Check if the notice requires another notice to be dismissed.
+            if (isset($notice['requires_dismiss'])) {
+                if (!get_user_meta(get_current_user_id(), self::PREFIX . $notice['requires_dismiss'], true)) {
+                    continue;
+                }
             }
 
             // Check if the notice has been dismissed.

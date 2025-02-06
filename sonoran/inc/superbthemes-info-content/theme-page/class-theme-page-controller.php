@@ -15,6 +15,7 @@ class ThemePageController
             'theme_url' => isset($options['theme_url']) ? $options['theme_url'] : false,
             'demo_url' => isset($options['demo_url']) ? $options['demo_url'] : false,
             'features' => isset($options['features']) ? $options['features'] : false,
+            'type' => isset($options['type']) ? $options['type'] : 'block',
         );
 
         self::$meta_key = get_stylesheet() . '_themepage_seen';

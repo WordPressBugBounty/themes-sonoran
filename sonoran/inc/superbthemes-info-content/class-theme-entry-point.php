@@ -10,7 +10,7 @@ defined('ABSPATH') || exit();
 
 class ThemeEntryPoint
 {
-    const Version = '1.0';
+    const Version = '2.0';
 
     private static function InitializeThemePage($options)
     {

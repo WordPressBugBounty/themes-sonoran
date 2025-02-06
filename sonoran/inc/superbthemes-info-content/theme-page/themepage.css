@@ -223,14 +223,9 @@
 .spt-theme-settings-wrapper-sidebar-item .button-primary:active,
 .spt-theme-settings-wrapper-sidebar-item .button-primary:hover,
 .spt-theme-settings-wrapper-sidebar-item .button-primary:focus {
-	background: -webkit-gradient(linear, left top, left bottom, from(#9524FF), to(#4312E2)),
-	-webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2)));
-	background: -o-linear-gradient(top, #9524FF 0%, #4312E2 100%),
-	-o-linear-gradient(bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
-	background: linear-gradient(180deg, #9524FF 0%, #4312E2 100%),
-	linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    background: #00BC87;
+    border: 2px solid #00d096;
 	color:#fff;
-	border:0px;
 }
 
 .spt-theme-settings-wrapper-sidebar-item-content-demo-image {

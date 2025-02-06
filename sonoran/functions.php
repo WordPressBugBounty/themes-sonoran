@@ -97,65 +97,8 @@ require_once trailingslashit(get_template_directory()) . 'inc/vendor/autoload.ph
 
 use SuperbThemesThemeInformationContent\ThemeEntryPoint;
 
-define('SUPERBTHEMES_INFO_CONTENT_TEXT_DOMAIN', "sonoran");
-
 ThemeEntryPoint::init([
-	"templates" => [
-		array(
-			'name' => __("Front Page", "sonoran"),
-			'frontpage' => true,
-			'required' => true,
-			'image' => 'front-page.png',
-		),
-		array(
-			'name' => __("About", "sonoran"),
-			'required' => false,
-			'slug' => 'about',
-			'image' => 'about.png',
-		),
-		array(
-			'name' => __("Contact", "sonoran"),
-			'required' => false,
-			'slug' => 'contact',
-			'image' => 'contact.png',
-		),
-		array(
-			'name' => __("Blog", "sonoran"),
-			'template_only' => true,
-			'required' => true,
-			'image' => 'blog.png',
-		),
-		array(
-			'name' => __("Page", "sonoran"),
-			'template_only' => true,
-			'required' => true,
-			'image' => 'pages.png',
-		),
-		array(
-			'name' => __("Post", "sonoran"),
-			'template_only' => true,
-			'required' => true,
-			'image' => 'posts.png',
-		),
-		array(
-			'name' => __("Archives", "sonoran"),
-			'template_only' => true,
-			'required' => true,
-			'image' => 'archives.png',
-		),
-		array(
-			'name' => __("Search", "sonoran"),
-			'template_only' => true,
-			'required' => true,
-			'image' => 'search.png',
-		),
-		array(
-			'name' => __("404", "sonoran"),
-			'template_only' => true,
-			'required' => true,
-			'image' => '404.png',
-		),
-	],
+	'type' => 'block', // block / classic
 	'theme_url' => 'https://superbthemes.com/sonoran/',
 	'demo_url' => 'https://superbthemes.com/demo/sonoran/'
 ]);

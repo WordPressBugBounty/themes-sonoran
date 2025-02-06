@@ -1,6 +1,6 @@
 <?php
 defined('ABSPATH') || exit;
-$theme_url = $notice['data']['theme_url'];
+$theme_url = $notice['data']['theme_url']."?su_source=notice";
 $theme_name = wp_get_theme()->name;
 ?>
 <div class="notice notice-info is-dismissible <?php echo esc_attr($notice['unique_id']); ?>">
