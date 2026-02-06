@@ -2,9 +2,9 @@
 
 Contributors: SuperbAddons
 Requires at least: 4.0  
-Tested up to: 6.6
-Stable tag: 3.9
-Version: 3.9
+Tested up to: 6.9
+Stable tag: 5.3
+Version: 5.3
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: theme-options, threaded-comments, translation-ready, sticky-post, footer-widgets, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, flexible-header, right-sidebar, one-column, two-columns, three-columns, buddypress, full-width-template, e-commerce, blog, news
@@ -17,7 +17,7 @@ Sonoran is a easy to use WordPress theme designed with travel and lifestyle blog
 
 
 ## Copyright
-Sonoran WordPress Theme, Copyright 2024 SuperbAddons
+Sonoran WordPress Theme, Copyright 2026 SuperbAddons
 Sonoran is distributed under the terms of the GNU GPL
 
 Sonoran bundles the following third-party resources:
